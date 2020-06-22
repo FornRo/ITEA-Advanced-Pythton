@@ -3,15 +3,12 @@ def next(x='______________________________'):
 
 class Car:
 
-    def __init__(self, brand, model, color, price, lenght=None, clearance=None, weight=None, max_load=None):
+    def __init__(self, brand, model, color, price, lenght=None):
         self.brand = brand
         self.model = model
         self.color = color
         self.price = price
         self.lenght = lenght
-        self.clearance = clearance
-        self.weight = weight
-        self.max_load = max_load
 
 
     def look_car(self):
@@ -32,8 +29,6 @@ class Car:
 
 
 class F_class_car(Car):
-    def __init__(self, brand, model, color, price, lenght):
-        super().__init__(brand, model, color, price, lenght)
 
     def look_car(self):
         return f'You look on {self.brand}, {self.model}, this car is business class: price = {self.price}'
@@ -49,8 +44,10 @@ class F_class_car(Car):
 class J_class_car(Car):
     
     def __init__(self, brand, model, color, price, lenght=None, clearance=None, weight=None, max_load=None):
-        super().__init__(brand, model, color, price, lenght=lenght, clearance=clearance, weight=weight, max_load=max_load)
-
+        super().__init__(brand, model, color, price, lenght=lenght)
+        self.clearance = clearance
+        self.weight = weight
+        self.max_load = max_load
     def specification(self):
         return super().specification()
         return {

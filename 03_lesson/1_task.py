@@ -10,7 +10,7 @@ def repeater(repeats):
             start_time = time()
             results = []
 
-            for i in range(repeats):
+            for _ in range(repeats):
                 results.append(func())
 
             print(f'funck take for {round(time() - start_time, 4)} second')
@@ -23,7 +23,7 @@ def repeater(repeats):
 def get_random():
     result = 1
     for _ in range(5):
-        result *= random.randint(1, 100 +1)
+        result += random.randint(1, 10 +1)
     return result
 
 

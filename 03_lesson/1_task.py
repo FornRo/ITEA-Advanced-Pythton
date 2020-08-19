@@ -10,7 +10,8 @@ def repeater(repeats):
             start_time = time()
             results = []
 
-            for _ in range(repeats):
+            for repeat in range(repeats):
+                print(repeat)
                 results.append(func())
 
             print(f'funck take for {round(time() - start_time, 4)} second')

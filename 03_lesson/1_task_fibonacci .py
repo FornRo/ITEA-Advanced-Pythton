@@ -6,7 +6,8 @@ def repeater_fib(repeats):
         
         def wrapper(n):
             results = 0
-            for _ in range(repeats):
+            for repeat in range(repeats):
+                print(repeat)
                 results += func(n)
             print(f'funck take for {round(time() - start_time, 4)} second')
 

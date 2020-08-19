@@ -1,6 +1,6 @@
 # Создать класс комплексного числа и реализовать для него арифметические операции.
 import re
-
+import  copy
 
 class CompleksNumbers:
     """
@@ -34,29 +34,33 @@ class CompleksNumbers:
 
     def __add__(self, other):
         if self.is_instance(other):
-            return (self.number + other.number, self.leter) if self.is_label_identical(other) \
+            result = (self.number + other.number, self.leter) if self.is_label_identical(other) \
                 else self.error2
+            return copy.copy(result)
         else:
             return self.error1
 
     def __sub__(self, other):
         if self.is_instance(other):
-            return (self.number - other.number, self.leter) if self.is_label_identical(other) \
+            result = (self.number - other.number, self.leter) if self.is_label_identical(other) \
                 else self.error2
+            return copy.copy(result)
         else:
             return self.error1
 
     def __mul__(self, other):
         if self.is_instance(other):
-            return (self.number * other.number, self.leter) if self.is_label_identical(other) \
+            result = (self.number * other.number, self.leter) if self.is_label_identical(other) \
                 else self.error2
+            return copy.copy(result)
         else:
             return self.error1
 
     def __truediv__(self, other):
         if self.is_instance(other):
-            return (self.number / other.number, self.leter) if self.is_label_identical(other) \
+            result = (self.number / other.number, self.leter) if self.is_label_identical(other) \
                 else self.error2
+            return copy.copy(result)
         else:
             return self.error1
 
